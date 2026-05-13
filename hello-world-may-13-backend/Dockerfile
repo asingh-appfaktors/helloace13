@@ -3,7 +3,7 @@ FROM node:lts-alpine AS builder
 WORKDIR /app
 RUN npm install -g pnpm
 COPY package*.json pnpm-lock.yaml* ./
-RUN pnpm install
+RUN pnpm install --ignore-scripts
 COPY . .
 RUN pnpm build
 
@@ -11,7 +11,8 @@ RUN pnpm build
 FROM node:lts-alpine AS production
 WORKDIR /app
 RUN npm install -g pnpm
-COPY --from=builder /app/node_modules ./node_modules
+COPY package*.json pnpm-lock.yaml* ./
+RUN pnpm install --prod --ignore-scripts
 COPY --from=builder /app/dist ./dist
 EXPOSE 3001
 HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
