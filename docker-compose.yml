@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  hello-world-may-13-ui:
+    build:
+      context: ./hello-world-may-13-ui
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    env_file:
+      - .env
+    depends_on:
+      - hello-world-may-13-backend
+    networks:
+      - app-network
+
+  hello-world-may-13-backend:
+    build:
+      context: ./hello-world-may-13-backend
+      dockerfile: Dockerfile
+    ports:
+      - "3001:3001"
+    env_file:
+      - .env
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD", "wget", "-qO-", "http://localhost:3001/health"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+networks:
+  app-network:
+    driver: bridge

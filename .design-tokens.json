@@ -1,0 +1,40 @@
+{
+  "id": "9e6768c8-ca37-4253-ac31-a330981c7c39",
+  "name": "qviewui",
+  "manifestId": "qview-ui",
+  "framework": {
+    "name": "MUI",
+    "version": "latest"
+  },
+  "runtime": {
+    "react": "19"
+  },
+  "archetypes": [],
+  "tokens": {
+    "color": {
+      "ace-primary": "#20e811",
+      "ace-accent": "#0FA4AF",
+      "ace-surface": "#AFDDE5",
+      "ace-ink": "#001E21",
+      "ace-muted": "#024950",
+      "ace-gold": "#964734"
+    },
+    "font": {
+      "display": "Inter",
+      "body": "Inter",
+      "mono": "JetBrains Mono"
+    },
+    "radius": {
+      "sm": "4px",
+      "md": "8px",
+      "lg": "12px"
+    },
+    "spacing": {
+      "xs": "4px",
+      "sm": "8px",
+      "md": "16px",
+      "lg": "24px",
+      "xl": "40px"
+    }
+  }
+}
