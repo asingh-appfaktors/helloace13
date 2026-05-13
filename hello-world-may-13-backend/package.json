@@ -12,6 +12,9 @@
     "cors": "^2.8.5",
     "express": "^4.21.0"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["esbuild"]
+  },
   "devDependencies": {
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
