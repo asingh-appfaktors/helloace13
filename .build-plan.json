@@ -1,0 +1,48 @@
+{
+  "buildPlan": {
+    "metadata": {
+      "rigorLevel": "prototype",
+      "architectureStyle": "modular-monolith",
+      "applicationType": ["webapp-spa"],
+      "packagePreference": "Minimal",
+      "soSDeployableCount": 2,
+      "buildableCount": 2,
+      "infraCount": 1
+    },
+    "buildableDeployables": [
+      {
+        "packageName": "hello-world-may-13-ui",
+        "packageType": "frontend-app",
+        "scaffoldStrategy": "create-new",
+        "techStack": { "language": "TypeScript", "framework": "React" },
+        "artifact": "web-bundle",
+        "packageManager": "vite",
+        "containerization": false,
+        "hostingInfraNames": ["hello-world-may-13-local-process"],
+        "estimatedTasks": 2,
+        "estimatedHours": 6
+      },
+      {
+        "packageName": "hello-world-may-13-backend",
+        "packageType": "backend-service",
+        "scaffoldStrategy": "create-new",
+        "techStack": { "language": "Node.js", "framework": "Express" },
+        "artifact": "node-package",
+        "packageManager": "pnpm",
+        "containerization": false,
+        "hostingInfraNames": ["hello-world-may-13-local-process"],
+        "estimatedTasks": 2,
+        "estimatedHours": 6
+      }
+    ],
+    "infraDeployables": [
+      {
+        "name": "hello-world-may-13-local-process",
+        "physicalType": "PhysicalPlatform",
+        "physicalService": "Local Process Runtime",
+        "provider": "on-prem",
+        "hostsPackages": ["hello-world-may-13-ui", "hello-world-may-13-backend"]
+      }
+    ]
+  }
+}

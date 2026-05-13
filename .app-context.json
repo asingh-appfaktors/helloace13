@@ -1,0 +1,25 @@
+{
+  "applicationProfileId": "app-hello-world-may-13-001",
+  "applicationBasics": {
+    "applicationName": "Hello World-May-13",
+    "businessPurpose": "Say Hello ACE May 12",
+    "applicationType": ["webapp-spa"],
+    "architectureStyle": "modular-monolith",
+    "rigorLevel": "prototype",
+    "complexity": "SIMPLE"
+  },
+  "technologyContext": {
+    "preferredLanguages": ["TypeScript", "JavaScript"],
+    "apiStyle": "REST",
+    "specificChoices": {
+      "frontend": "React + TypeScript",
+      "backend": "Node.js + Express",
+      "database": "Not required"
+    }
+  },
+  "uiTemplateKit": "9e6768c8-ca37-4253-ac31-a330981c7c39",
+  "domainDefinition": {
+    "domainName": "General Utility",
+    "domainVision": "A simple greeting application demonstrating basic web functionality"
+  }
+}
